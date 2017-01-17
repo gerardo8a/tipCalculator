@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    // Not sure how to get rid of the warning because pointiner comared with nil, tried casting but it did not worked
     if ([defaults integerForKey:@"tipIndexValue"] != nil) {
         self.tipControl.selectedSegmentIndex = [defaults integerForKey:@"tipIndexValue"];
     } else {
@@ -37,17 +38,5 @@
     [defaults setInteger:self.tipControl.selectedSegmentIndex forKey:@"tipIndexValue"];
     [defaults synchronize];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 @end

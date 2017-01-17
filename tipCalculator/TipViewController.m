@@ -25,6 +25,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    // Investigating how to import as function from settings View to avoid code duplication
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults integerForKey:@"tipIndexValue"] != nil) {
@@ -63,21 +65,5 @@
     self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f",   totalAmount];
 
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    NSLog(@"view will appear");
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated {
-//    NSLog(@"view did appear");
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated {
-//    NSLog(@"view will disappear");
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated {
-//    NSLog(@"view did disappear");
-//}
 
 @end
